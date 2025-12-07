@@ -9,9 +9,10 @@
 <style>
 body {
     margin: 0;
+    padding: 0;
     font-family: "Noto Sans TC", sans-serif;
-    background: linear-gradient(#f9f6f2, #efe8e0);
-    color: #4c3f39;
+    background: linear-gradient(#faf8f4, #efe9e2);
+    color: #4b413c;
 }
 
 /* 導覽列 */
@@ -34,125 +35,58 @@ body {
     font-size: 15px;
 }
 
-.header {
-    text-align: center;
-    padding: 35px 20px 25px;
-}
-
-.logo-circle {
-    width: 85px;
-    height: 85px;
-    background: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    font-weight: 700;
-    color: #5a4a43;
-    margin: 0 auto 12px;
-}
-
-.title {
-    font-size: 24px;
-    font-weight: 800;
-}
-
-.section {
+/* 卡片 */
+.card {
     width: 90%;
     background: #ffffff;
     margin: 20px auto;
-    padding: 18px 18px 22px;
+    padding: 20px 22px;
     border-radius: 22px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
-.section-title {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 12px;
+.title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: #6b5a53;
 }
 
-.date-box {
+/* 項目 */
+.item-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background: #f7f3ee;
-    padding: 12px 15px;
-    border-radius: 15px;
-    font-size: 17px;
-    font-weight: 600;
+    padding: 12px 0;
+    border-bottom: 1px solid #efe7df;
+    font-size: 15px;
+    color: #5b4c45;
 }
 
-.time-grid {
+/* 時段按鈕 */
+.time-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: 15px;
-}
-
-.time-btn {
-    padding: 14px;
-    background: #f6f2ed;
-    border: 1px solid #e6ddd6;
-    border-radius: 14px;
-    text-align: center;
-}
-
-.select-box {
-    width: 100%;
-    background: #f7f3ee;
-    border-radius: 14px;
-    padding: 12px;
-    border: 1px solid #e6ddd6;
-    font-size: 15px;
+    gap: 14px;
     margin-top: 10px;
 }
 
-.submit-btn {
-    width: 90%;
-    margin: 30px auto 40px;
-    display: block;
-    padding: 15px;
-    border: none;
-    border-radius: 18px;
-    background: #f1e3d3;
-    font-size: 17px;
-    font-weight: 700;
-    color: #4a3d37;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-.contact-buttons {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.btn-ig, .btn-line {
-    padding: 12px 18px;
-    border-radius: 14px;
-    font-size: 15px;
-    text-decoration: none;
-    font-weight: 600;
-    min-width: 130px;
+.time-btn {
+    padding: 12px 0;
+    background: #f2e7dd;
     text-align: center;
-    display: block;
+    border-radius: 14px;
+    font-weight: 700;
+    color: #6a5b54;
+    font-size: 15px;
+    pointer-events: none;   /* 無法點選 */
+    opacity: 0.7;
 }
 
-.btn-ig {
-    background: #fff;
-    border: 2px solid #e5d9cf;
-    color: #7b645a;
+.notice {
+    margin: 8px 0 0;
+    font-size: 13px;
+    color: #957f73;
 }
-
-.btn-line {
-    background: #c5f3cd;
-    color: #136f2d;
-}
-
 </style>
 </head>
 
@@ -164,66 +98,31 @@ body {
     <a href="price.html">價目表</a>
 </div>
 
-<div class="header">
-    <div class="logo-circle">R</div>
-    <div class="title">Rainie 預約中心</div>
+<!-- 預約說明 -->
+<div class="card">
+    <div class="title">📅 預約說明</div>
+
+    <div class="item-row">目前採用 LINE 私訊預約</div>
+    <div class="item-row">為保障品質，建議提前 1–3 天預約</div>
+    <div class="item-row">假日因為人潮較多，可能需稍等一下喔</div>
+
+    <div class="notice">⚠️ 下方時間為「參考時段」，無法直接線上預約</div>
 </div>
 
-<form action="https://formsubmit.co/tina900829@gmail.com" method="POST">
+<!-- 時段展示（不能選） -->
+<div class="card">
+    <div class="title">🕒 可服務時段（展示用）</div>
 
-<div class="section">
-    <div class="section-title">預約日期</div>
-
-    <div class="date-box">
-        <span>◀</span>
-        <span>選擇日期</span>
-        <span>▶</span>
-    </div>
-</div>
-
-<div class="section">
-    <div class="section-title">選擇時段</div>
-
-    <div class="time-grid">
+    <div class="time-box">
         <div class="time-btn">10:00</div>
         <div class="time-btn">11:30</div>
         <div class="time-btn">13:30</div>
         <div class="time-btn">15:00</div>
         <div class="time-btn">16:30</div>
     </div>
+
+    <div class="notice">請截圖或記住時段後，LINE 私訊 Rainie 預約 💛</div>
 </div>
-
-<div class="section">
-    <div class="section-title">預約項目</div>
-
-    <select name="項目" class="select-box" required>
-        <option value="">請選擇服務項目</option>
-        <option>洗髮</option>
-        <option>剪髮</option>
-        <option>護髮</option>
-        <option>染髮（不漂）</option>
-    </select>
-
-    <select name="髮長" class="select-box">
-        <option value="">髮長（可選）</option>
-        <option>短髮</option>
-        <option>中長髮</option>
-        <option>長髮</option>
-    </select>
-
-    <textarea name="留言" class="select-box" style="height:80px;" placeholder="想說的話、參考 IG 圖片、需求..."></textarea>
-</div>
-
-<button class="submit-btn" type="submit">送出預約</button>
-
-</form>
-
-<div class="contact-buttons">
-    <a href="https://www.instagram.com/rainie_.hair" class="btn-ig" target="_blank">IG 作品集</a>    
-    <a href="https://lin.ee/b66B1AB" class="btn-line" target="_blank">LINE 聯絡</a>
-</div>
-
-<br><br>
 
 </body>
 </html>
