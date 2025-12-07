@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>預約中心｜Rainie Hair Atelier</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    background: linear-gradient(#f9f6f2, #efe8e0);
+    color: #4c3f39;
+}
+
+/* 導覽列 */
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: #ffffffcc;
+    backdrop-filter: blur(6px);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    border-bottom: 1px solid #e6ddd6;
+}
+.nav a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #6b5a53;
+    font-size: 15px;
+}
+
+.header {
+    text-align: center;
+    padding: 35px 20px 25px;
+}
+
+.logo-circle {
+    width: 85px;
+    height: 85px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #5a4a43;
+    margin: 0 auto 12px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.section {
+    width: 90%;
+    background: #ffffff;
+    margin: 20px auto;
+    padding: 18px 18px 22px;
+    border-radius: 22px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.date-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7f3ee;
+    padding: 12px 15px;
+    border-radius: 15px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.time-btn {
+    padding: 14px;
+    background: #f6f2ed;
+    border: 1px solid #e6ddd6;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.select-box {
+    width: 100%;
+    background: #f7f3ee;
+    border-radius: 14px;
+    padding: 12px;
+    border: 1px solid #e6ddd6;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    width: 90%;
+    margin: 30px auto 40px;
+    display: block;
+    padding: 15px;
+    border: none;
+    border-radius: 18px;
+    background: #f1e3d3;
+    font-size: 17px;
+    font-weight: 700;
+    color: #4a3d37;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-ig, .btn-line {
+    padding: 12px 18px;
+    border-radius: 14px;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    min-width: 130px;
+    text-align: center;
+    display: block;
+}
+
+.btn-ig {
+    background: #fff;
+    border: 2px solid #e5d9cf;
+    color: #7b645a;
+}
+
+.btn-line {
+    background: #c5f3cd;
+    color: #136f2d;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+    <a href="index.html">首頁</a>
+    <a href="booking.html">預約中心</a>
+    <a href="price.html">價目表</a>
+</div>
+
+<div class="header">
+    <div class="logo-circle">R</div>
+    <div class="title">Rainie 預約中心</div>
+</div>
+
+<form action="https://formsubmit.co/tina900829@gmail.com" method="POST">
+
+<div class="section">
+    <div class="section-title">預約日期</div>
+
+    <div class="date-box">
+        <span>◀</span>
+        <span>選擇日期</span>
+        <span>▶</span>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">選擇時段</div>
+
+    <div class="time-grid">
+        <div class="time-btn">10:00</div>
+        <div class="time-btn">11:30</div>
+        <div class="time-btn">13:30</div>
+        <div class="time-btn">15:00</div>
+        <div class="time-btn">16:30</div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">預約項目</div>
+
+    <select name="項目" class="select-box" required>
+        <option value="">請選擇服務項目</option>
+        <option>洗髮</option>
+        <option>剪髮</option>
+        <option>護髮</option>
+        <option>染髮（不漂）</option>
+    </select>
+
+    <select name="髮長" class="select-box">
+        <option value="">髮長（可選）</option>
+        <option>短髮</option>
+        <option>中長髮</option>
+        <option>長髮</option>
+    </select>
+
+    <textarea name="留言" class="select-box" style="height:80px;" placeholder="想說的話、參考 IG 圖片、需求..."></textarea>
+</div>
+
+<button class="submit-btn" type="submit">送出預約</button>
+
+</form>
+
+<div class="contact-buttons">
+    <a href="https://www.instagram.com/rainie_.hair" class="btn-ig" target="_blank">IG 作品集</a>    
+    <a href="https://lin.ee/b66B1AB" class="btn-line" target="_blank">LINE 聯絡</a>
+</div>
+
+<br><br>
+
+</body>
+</html>
