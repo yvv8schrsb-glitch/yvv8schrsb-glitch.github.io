@@ -52,16 +52,6 @@ body {
     color: #6b5a53;
 }
 
-/* 項目 */
-.item-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid #efe7df;
-    font-size: 15px;
-    color: #5b4c45;
-}
-
 /* 時段按鈕 */
 .time-box {
     display: grid;
@@ -78,14 +68,26 @@ body {
     font-weight: 700;
     color: #6a5b54;
     font-size: 15px;
-    pointer-events: none;   /* 無法點選 */
-    opacity: 0.7;
+    transition: 0.2s;
+}
+.time-btn.active {
+    background: #e4cfc3;
+    color: #5a4740;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 }
 
-.notice {
-    margin: 8px 0 0;
-    font-size: 13px;
-    color: #957f73;
+/* 預約按鈕 */
+.submit-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px 0;
+    background: #d8bfb3;
+    color: #4a403a;
+    border: none;
+    text-align: center;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 700;
 }
 </style>
 </head>
@@ -98,20 +100,8 @@ body {
     <a href="price.html">價目表</a>
 </div>
 
-<!-- 預約說明 -->
 <div class="card">
-    <div class="title">📅 預約說明</div>
-
-    <div class="item-row">目前採用 LINE 私訊預約</div>
-    <div class="item-row">為保障品質，建議提前 1–3 天預約</div>
-    <div class="item-row">假日因為人潮較多，可能需稍等一下喔</div>
-
-    <div class="notice">⚠️ 下方時間為「參考時段」，無法直接線上預約</div>
-</div>
-
-<!-- 時段展示（不能選） -->
-<div class="card">
-    <div class="title">🕒 可服務時段（展示用）</div>
+    <div class="title">🕒 選擇預約時段</div>
 
     <div class="time-box">
         <div class="time-btn">10:00</div>
@@ -121,8 +111,23 @@ body {
         <div class="time-btn">16:30</div>
     </div>
 
-    <div class="notice">請截圖或記住時段後，LINE 私訊 Rainie 預約 💛</div>
+    <button class="submit-btn" onclick="alertMsg()">確認預約</button>
 </div>
+
+<script>
+let buttons = document.querySelectorAll(".time-btn");
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+    });
+});
+
+function alertMsg() {
+    alert("請加 LINE（@b66B1AB）私訊預約喔 💛");
+}
+</script>
 
 </body>
 </html>
