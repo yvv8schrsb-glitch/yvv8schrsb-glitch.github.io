@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>價目表｜Rainie Hair Atelier</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    background: linear-gradient(#faf8f4, #efe9e2);
+    color: #4b413c;
+}
+
+/* 導覽列 */
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: #ffffffcc;
+    backdrop-filter: blur(6px);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    border-bottom: 1px solid #e6ddd6;
+}
+.nav a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #6b5a53;
+    font-size: 15px;
+}
+
+.card {
+    width: 90%;
+    background: #ffffff;
+    margin: 18px auto;
+    padding: 18px 20px;
+    border-radius: 22px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #6b5a53;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee5dd;
+}
+
+.item-name {
+    font-size: 15px;
+}
+
+.item-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #7b645a;
+}
+
+.footer {
+    text-align: center;
+    color: #8a807a;
+    margin: 40px 0 30px;
+    font-size: 14px;
+}
+
+.btn-home {
+    display: block;
+    width: 90%;
+    margin: 25px auto 0;
+    background: #f2e5d8;
+    color: #4a403a;
+    padding: 14px;
+    border-radius: 18px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+    <a href="index.html">首頁</a>
+    <a href="booking.html">預約中心</a>
+    <a href="price.html">價目表</a>
+</div>
+
+<div class="card">
+    <div class="card-title">🧴 洗髮</div>
+
+    <div class="item-row"><span class="item-name">芳香洗 / 假日洗</span><span class="item-price">$499</span></div>
+    <div class="item-row"><span class="item-name">深層淨化洗</span><span class="item-price">$699</span></div>
+    <div class="item-row"><span class="item-name">頭皮護理洗</span><span class="item-price">$799</span></div>
+</div>
+
+<div class="card">
+    <div class="card-title">✂️ 剪髮</div>
+
+    <div class="item-row"><span class="item-name">JC 老師剪髮</span><span class="item-price">$600</span></div>
+    <div class="item-row"><span class="item-name">Rainie 剪髮</span><span class="item-price">$500</span></div>
+    <div class="item-row"><span class="item-name">兒童剪髮</span><span class="item-price">$350</span></div>
+</div>
+
+<div class="card">
+    <div class="card-title">💆‍♀️ 護髮</div>
+
+    <div class="item-row"><span class="item-name">基礎護髮</span><span class="item-price">$799</span></div>
+    <div class="item-row"><span class="item-name">深層專業護髮</span><span class="item-price">$1500</span></div>
+    <div class="item-row"><span class="item-name">頭皮 SPA（25–30 分）</span><span class="item-price">$1600–$1700</span></div>
+</div>
+
+<div class="card">
+    <div class="card-title">🎨 染髮（不漂）</div>
+
+    <div class="item-row"><span class="item-name">短髮</span><span class="item-price">$1800 起</span></div>
+    <div class="item-row"><span class="item-name">中長髮</span><span class="item-price">$2200 起</span></div>
+    <div class="item-row"><span class="item-name">長髮</span><span class="item-price">$2600 起</span></div>
+</div>
+
+<div class="footer">
+    Rainie Hair Atelier · 長安街331巷24號1樓 · 營業時間 9:30–18:00
+</div>
+
+</body>
+</html>
