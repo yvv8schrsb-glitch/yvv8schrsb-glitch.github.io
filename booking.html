@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>預約中心｜Rainie Hair Atelier</title>
+<title>線上預約｜Rainie Hair Atelier</title>
 
 <style>
 body {
@@ -52,15 +52,26 @@ body {
     color: #6b5a53;
 }
 
-/* 時段按鈕 */
-.time-box {
+/* 輸入框 */
+.input-box {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e6ddd6;
+    border-radius: 14px;
+    margin-top: 10px;
+    background: #faf6f2;
+    font-size: 15px;
+}
+
+/* 時段&日期 */
+.time-box, .item-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
     margin-top: 10px;
 }
 
-.time-btn {
+.time-btn, .item-btn {
     padding: 12px 0;
     background: #f2e7dd;
     text-align: center;
@@ -69,25 +80,27 @@ body {
     color: #6a5b54;
     font-size: 15px;
     transition: 0.2s;
+    cursor: pointer;
 }
-.time-btn.active {
+
+.active {
     background: #e4cfc3;
     color: #5a4740;
     box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 }
 
-/* 預約按鈕 */
+/* 送出按鈕 */
 .submit-btn {
-    margin-top: 20px;
     width: 100%;
-    padding: 14px 0;
-    background: #d8bfb3;
-    color: #4a403a;
+    padding: 15px 0;
     border: none;
-    text-align: center;
-    border-radius: 16px;
-    font-size: 16px;
+    border-radius: 18px;
+    background: #d8bfb3;
+    font-size: 17px;
     font-weight: 700;
+    color: #4a403a;
+    margin-top: 22px;
+    cursor: pointer;
 }
 </style>
 </head>
@@ -100,9 +113,28 @@ body {
     <a href="price.html">價目表</a>
 </div>
 
-<div class="card">
-    <div class="title">🕒 選擇預約時段</div>
+<form action="https://formsubmit.co/tina900829@gmail.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
 
+<!-- 個人資料 -->
+<div class="card">
+    <div class="title">👤 基本資料</div>
+
+    <input type="text" name="姓名" class="input-box" placeholder="姓名（必填）" required>
+    <input type="text" name="電話" class="input-box" placeholder="電話（必填）" required>
+    <input type="text" name="IG帳號" class="input-box" placeholder="IG 帳號（可選填）">
+</div>
+
+<!-- 日期 -->
+<div class="card">
+    <div class="title">📅 預約日期</div>
+    <input type="date" name="日期" class="input-box" required>
+</div>
+
+<!-- 時段 -->
+<div class="card">
+    <div class="title">🕒 時段</div>
     <div class="time-box">
         <div class="time-btn">10:00</div>
         <div class="time-btn">11:30</div>
@@ -110,23 +142,48 @@ body {
         <div class="time-btn">15:00</div>
         <div class="time-btn">16:30</div>
     </div>
-
-    <button class="submit-btn" onclick="alertMsg()">確認預約</button>
+    <input type="hidden" name="時段" id="time-input" required>
 </div>
 
-<script>
-let buttons = document.querySelectorAll(".time-btn");
+<!-- 預約項目 -->
+<div class="card">
+    <div class="title">✂️ 預約項目</div>
+    <select name="項目" class="input-box" required>
+        <option value="">請選擇服務項目</option>
+        <option>洗髮</option>
+        <option>剪髮</option>
+        <option>護髮</option>
+        <option>染髮（不漂）</option>
+    </select>
 
-buttons.forEach(btn => {
+    <select name="髮長" class="input-box">
+        <option value="">髮長（可選填）</option>
+        <option>短髮</option>
+        <option>中長髮</option>
+        <option>長髮</option>
+    </select>
+
+    <textarea name="備註" class="input-box" style="height:100px;" placeholder="可提供參考圖片、想法、需求…"></textarea>
+</div>
+
+<div class="card">
+    <button class="submit-btn">送出預約</button>
+</div>
+
+</form>
+
+<script>
+// 時段選取功能
+let timeButtons = document.querySelectorAll(".time-btn");
+let timeInput = document.getElementById("time-input");
+
+timeButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-        buttons.forEach(b => b.classList.remove("active"));
+        timeButtons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
+        timeInput.value = btn.textContent;
     });
 });
-
-function alertMsg() {
-    alert("請加 LINE（@b66B1AB）私訊預約喔 💛");
-}
 </script>
 
 </body>
