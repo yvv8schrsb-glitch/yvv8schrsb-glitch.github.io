@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rainie Hair Atelier</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    background: linear-gradient(#faf7f2, #f2ebe4);
+    color: #4a403a;
+}
+
+/* 導覽列 */
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: #ffffffcc;
+    backdrop-filter: blur(6px);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    border-bottom: 1px solid #e6ddd6;
+}
+.nav a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #6b5a53;
+    font-size: 15px;
+}
+
+.header {
+    text-align: center;
+    padding: 40px 20px 25px;
+}
+.logo-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #5f4b45;
+    margin: 0 auto 15px;
+}
+.title {
+    font-size: 26px;
+    font-weight: 800;
+}
+.subtitle {
+    font-size: 14px;
+    color: #8c7d73;
+}
+.btn-row {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+.btn {
+    padding: 12px 20px;
+    border-radius: 16px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 130px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+.btn-line {
+    background: #c5f3cd;
+    color: #126f2a;
+}
+.btn-book {
+    background: #fff;
+    border: 2px solid #e5d9cf;
+    color: #7b645a;
+}
+
+.section {
+    background: #ffffff;
+    width: 90%;
+    margin: 25px auto;
+    padding: 20px 18px;
+    border-radius: 22px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.time-btn {
+    padding: 12px;
+    background: #f7f3ee;
+    border: 1px solid #e6ddd6;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: #8c817b;
+    padding: 30px 0 35px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+    <a href="index.html">首頁</a>
+    <a href="booking.html">預約中心</a>
+    <a href="price.html">價目表</a>
+</div>
+
+<div class="header">
+    <div class="logo-circle">R</div>
+    <div class="title">Rainie Hair Atelier</div>
+    <div class="subtitle">柔霧髮色・層次剪・不漂也好看</div>
+
+    <div class="btn-row">
+        <a href="https://lin.ee/b66B1AB" class="btn btn-line" target="_blank">LINE 預約</a>
+        <a href="booking.html" class="btn btn-book">預約中心</a>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">今日可預約時段</div>
+    <div class="time-grid">
+        <div class="time-btn">10:00</div>
+        <div class="time-btn">11:30</div>
+        <div class="time-btn">13:30</div>
+        <div class="time-btn">15:00</div>
+        <div class="time-btn">16:30</div>
+    </div>
+</div>
+
+<div class="footer">
+    新北市板橋區長安街331巷24號1樓 · 營業時間 9:30–18:00
+</div>
+
+</body>
+</html>
