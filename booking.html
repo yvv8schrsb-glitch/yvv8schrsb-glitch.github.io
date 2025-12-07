@@ -52,7 +52,6 @@ body {
     color: #6b5a53;
 }
 
-/* 輸入框 */
 .input-box {
     width: 100%;
     padding: 12px;
@@ -63,15 +62,14 @@ body {
     font-size: 15px;
 }
 
-/* 時段&日期 */
-.time-box, .item-box {
+/* 時段 */
+.time-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
     margin-top: 10px;
 }
-
-.time-btn, .item-btn {
+.time-btn {
     padding: 12px 0;
     background: #f2e7dd;
     text-align: center;
@@ -82,14 +80,12 @@ body {
     transition: 0.2s;
     cursor: pointer;
 }
-
-.active {
+.time-btn.active {
     background: #e4cfc3;
     color: #5a4740;
     box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 }
 
-/* 送出按鈕 */
 .submit-btn {
     width: 100%;
     padding: 15px 0;
@@ -117,7 +113,7 @@ body {
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 
-<!-- 個人資料 -->
+<!-- 基本資料 -->
 <div class="card">
     <div class="title">👤 基本資料</div>
 
@@ -128,13 +124,14 @@ body {
 
 <!-- 日期 -->
 <div class="card">
-    <div class="title">📅 預約日期</div>
-    <input type="date" name="日期" class="input-box" required>
+    <div class="title">📅 預約日期（每週三公休）</div>
+    <input type="date" name="日期" id="datePicker" class="input-box" required>
+    <div style="font-size:13px;color:#957f73;margin-top:6px;">※ 每週三不可預約</div>
 </div>
 
 <!-- 時段 -->
 <div class="card">
-    <div class="title">🕒 時段</div>
+    <div class="title">🕒 選擇時段</div>
     <div class="time-box">
         <div class="time-btn">10:00</div>
         <div class="time-btn">11:30</div>
@@ -142,12 +139,13 @@ body {
         <div class="time-btn">15:00</div>
         <div class="time-btn">16:30</div>
     </div>
-    <input type="hidden" name="時段" id="time-input" required>
+    <input type="hidden" name="時段" id="timeInput" required>
 </div>
 
-<!-- 預約項目 -->
+<!-- 項目 -->
 <div class="card">
     <div class="title">✂️ 預約項目</div>
+
     <select name="項目" class="input-box" required>
         <option value="">請選擇服務項目</option>
         <option>洗髮</option>
@@ -173,13 +171,24 @@ body {
 </form>
 
 <script>
-// 時段選取功能
-let timeButtons = document.querySelectorAll(".time-btn");
-let timeInput = document.getElementById("time-input");
+// 每週三禁用
+const datePicker = document.getElementById("datePicker");
 
-timeButtons.forEach(btn => {
+datePicker.addEventListener("input", function () {
+    let selected = new Date(this.value);
+    if (selected.getDay() === 3) { // 0天日~6六 3＝星期三
+        alert("星期三為店休，請選擇其他日期喔 💛");
+        this.value = "";
+    }
+});
+
+// 時段選取
+let timeBtns = document.querySelectorAll(".time-btn");
+let timeInput = document.getElementById("timeInput");
+
+timeBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-        timeButtons.forEach(b => b.classList.remove("active"));
+        timeBtns.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
         timeInput.value = btn.textContent;
     });
